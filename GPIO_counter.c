@@ -1,4 +1,3 @@
-
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -18,6 +17,7 @@ void frqcounter(void)
 {
     g_count++;
 }
+
 //
 int initFrq(int pin)
 {
@@ -39,6 +39,7 @@ int getTimes(void)
 {
     return g_times;
 }
+
 //线程函数，每秒执行1次
 int threadCounter(void)
 {
