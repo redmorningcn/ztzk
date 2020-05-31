@@ -58,7 +58,7 @@ class Zkzt2Data:
         self.sendbuf.status = direction            #设置状态，默认正转
         self.sendbuf.speedH = 0x00
         self.sendbuf.speedL = speed
-        print(frq,frq>>8,frq)
+        print(direction,self.sendbuf.speedH,self.sendbuf.speedL,frq>>8,frq,)
         self.sendbuf.frqH   = frq >> 8
         self.sendbuf.frqL   = frq
         
@@ -66,8 +66,6 @@ class Zkzt2Data:
         
         print(self.sendbuf.status,self.sendbuf.bcc)
         self.ser.send(self.sendbuf)
-
-
 
 import  threading
 
