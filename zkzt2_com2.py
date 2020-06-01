@@ -74,7 +74,7 @@ import  threading
 def  taskSecond():
     while True:
         time.sleep(1)
-        print("频率：",Frqer.getFrq())
+        print("\r\n频率：",Frqer.getFrq())
 
 if __name__=="__main__":
     #port    = "COM10"                  #平台不同，打开方式不同
@@ -84,7 +84,7 @@ if __name__=="__main__":
     else:
         port  = "COM10"
 
-    pin     = 26
+    pin     = 21
     
     motor   = Zkzt2Data(port)
     Frqer.initFrq(pin)        #频率检测电路引脚

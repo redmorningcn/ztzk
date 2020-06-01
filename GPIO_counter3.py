@@ -4,7 +4,7 @@ import time
  
 pluseer = ctypes.cdll.LoadLibrary('./GPIO_counter.so')
 
-pluseer.initFrq(26)
+pluseer.initFrq(21)
 
 thread_hi = threading.Thread(target=pluseer.threadCounter)
 thread_hi.start()
