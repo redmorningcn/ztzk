@@ -6,6 +6,7 @@
 '''
 import ctypes
 from   SerialPort import *
+import platform
 
 #Checker= ctypes.cdll.LoadLibrary(".\\CrcCheck.dll")
 #不同的操作系统，打印对应的信息
@@ -74,7 +75,10 @@ import  threading
 def  taskSecond():
     while True:
         time.sleep(1)
-        print("\r\n频率：",Frqer.getFrq())
+        frq    = Frqer.getFrq()
+        rotate = (int)((60 * frq) / (11 * 10))
+        speed  = (int)(3.6 * (frq * 3.14 * 1.05) / (11 * 10))
+        print("\r\n频率：%d,转速：%d,速度：%d"%(frq,rotate,speed))
 
 if __name__=="__main__":
     #port    = "COM10"                  #平台不同，打开方式不同

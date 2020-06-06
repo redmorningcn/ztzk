@@ -37,10 +37,10 @@ def   daemonKey():
 def   initKey(pinnum):
     global keydict
     if pinnum in keydict:
-        print('已初始化 ',pinnum)
+        print('已初始化按键 ',pinnum)
     else:
         keydict[pinnum] = 0
-        print('未初始化 ',pinnum)
+        print('初始化按键 ',pinnum)
         
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(pinnum,GPIO.IN, pull_up_down=GPIO.PUD_UP) #设为输入，上拉电阻
